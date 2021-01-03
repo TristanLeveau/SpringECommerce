@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="header :: head"></div>
+
+<body class="is-preload">
+
+<!-- Header -->
+<div th:replace="header :: header"></div>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <section class="wrapper" id="main">
+        <div class="inner">
+            <h1 class="major">Good morning <span th:text="${session.connectedUser.firstName}"></span>.</h1>
+
+            <!-- Text -->
+            <section>
+                <h2>You are signed up!</h2>
+            </section>
+
+            <!--            <div th:replace="carousel :: carousel"></div>-->
+
+
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<div th:replace="footer :: footer"></div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

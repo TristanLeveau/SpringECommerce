@@ -9,16 +9,8 @@ import javax.persistence.*;
 @Table(name = "Product")
 public class Product {
 
-    public Product(Integer productId, ProductType productType, String productName, double productPrice, String productColor, String productSize, String productDescription, String otherDetails) {
-        this.productId = productId;
-        this.productType = productType;
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productColor = productColor;
-        this.productSize = productSize;
-        this.productDescription = productDescription;
-        this.otherDetails = otherDetails;
-    }
+    @Column(name = "product_total_quantity")
+    private Integer productTotalQuantity;
 
     public Product() {
 
@@ -47,6 +39,19 @@ public class Product {
     private String productDescription;
     @Column(name = "other_details")
     private String otherDetails;
+
+    public Product(Integer productId, ProductType productType, String productName, double productPrice, String productColor, String productSize, String productDescription, String otherDetails, Integer productTotalQuantity) {
+        this.productId = productId;
+        this.productType = productType;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productColor = productColor;
+        this.productSize = productSize;
+        this.productDescription = productDescription;
+        this.otherDetails = otherDetails;
+        this.productTotalQuantity = productTotalQuantity;
+    }
+
 
     public Integer getProductId() {
         return productId;
@@ -110,5 +115,13 @@ public class Product {
 
     public void setOtherDetails(String otherDetails) {
         this.otherDetails = otherDetails;
+    }
+
+    public Integer getProductTotalQuantity() {
+        return productTotalQuantity;
+    }
+
+    public void setProductTotalQuantity(Integer productTotalQuantity) {
+        this.productTotalQuantity = productTotalQuantity;
     }
 }

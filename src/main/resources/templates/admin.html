@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring E-Commerce</title>
+    <meta charset="utf-8"/>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/a0c6b9bb23.js"></script>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" th:href="@{../assets/css/main.css}"/>
+    <noscript>
+        <link rel="stylesheet" th:href="@{../assets/css/noscript.css}"/>
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+<!-- Header -->
+<div th:replace="header"></div>
+
+<!-- Wrapper -->
+
+
+<!-- Text -->
+<section id="sidebar">
+    <div class="inner">
+        <nav>
+            <ul>
+                <li><a href="#intro">Products</a></li>
+                <li><a href="#one">Users</a></li>
+                <li><a href="#two">Modify site layout</a></li>
+                <li><a href="#three">Get in touch</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<section class="wrapper style1 fullscreen fade-up" id="intro">
+    <div class="inner">
+        <h1>Admin section</h1>
+        <p>Subtitle</p>
+        <ul class="actions">
+            <li>
+                <a class="button scrolly" href="#one">Button.</a>
+                <a class="button scrolly" style="margin-left: 20px">Other button.</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- Footer -->
+<div th:replace="footer :: footer"></div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

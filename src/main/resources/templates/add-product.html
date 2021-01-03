@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="header :: head"></div>
+
+<body class="is-preload">
+
+<!-- Header -->
+<header id="header">
+	<a class="title" th:href="@{home}">Spring E-Commerce</a>
+	<nav>
+		<ul>
+			<li><a th:href="@{home}">Home</a></li>
+			<li><a class="active" th:href="@{elements}">Products</a></li>
+			<li><a th:href="@{generic}">Contact us</a></li>
+			<li><a th:href="@{sign-up}">Sign up</a></li>
+		</ul>
+	</nav>
+</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Products</h1>
+
+							<!-- Text -->
+							<section>
+								<h2>Add a new product</h2>
+
+								<form action="#" method="post" th:action="@{/add-product}" th:object="${newProduct}">
+									<div class="row gtr-uniform">
+										<div class="col-12">
+											<input id="product-name" name="product-name" placeholder="Product name"
+												   th:field="*{productName}" type="text" value=""/>
+										</div>
+										<div class="col-12">
+											<select id="demo-category" name="demo-category"
+													th:field="*{productType.productTypeId}">
+												<option th:each="productType : ${productTypes}"
+														th:text="${productType.productTypeDescription}"
+														th:value="${productType.productTypeId}">- Category -
+												</option>
+											</select>
+										</div>
+										<div class="col-12">
+											<textarea id="product-description" name="product-description"
+													  placeholder="Product description" rows="6"
+													  th:field="*{productDescription}"></textarea>
+										</div>
+
+										<div class="col-6 col-12-small">
+											<input id="product-price" name="product-price" placeholder="Product price"
+												   th:field="*{productPrice}" type="text" value=""/>
+										</div>
+
+										<div class="col-6 col-12-small">
+											<input id="product-total-quantity" name="product-total-quantity"
+												   placeholder="Product quantity" th:field="*{productTotalQuantity}"
+												   type="text" value=""/>
+										</div>
+
+
+										<h3>Additional details</h3>
+
+										<br>
+
+
+										<div id="additional-details-collapse">
+
+											<div class="col-6 col-12-small">
+												<input id="product-color" name="product-color"
+													   placeholder="Product color" th:field="*{productColor}"
+													   type="text" value=""/>
+											</div>
+
+											<div class="col-6 col-12-small">
+												<input id="product-size" name="product-size" placeholder="Product size"
+													   th:field="*{productSize}" type="text" value=""/>
+											</div>
+
+										</div>
+
+
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="demo-copy" name="demo-copy">
+											<label for="demo-copy">Email product summary</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+
+											<div class="col-12">
+												<ul class="actions">
+													<li><input class="primary" type="submit" value="Add product"/></li>
+													<li><input type="reset" value="Reset"/></li>
+												</ul>
+											</div>
+										</div>
+								</form>
+							</section>
+
+
+						</div>
+					</section>
+
+			</div>
+
+<!-- Footer -->
+<div th:replace="footer :: footer"></div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

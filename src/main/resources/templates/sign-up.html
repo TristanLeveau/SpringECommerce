@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Page title</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <noscript>
+        <link href="assets/css/noscript.css" rel="stylesheet"/>
+    </noscript>
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<div th:replace="header"></div>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <section class="wrapper" id="main">
+        <div class="inner">
+            <h1 class="major">Sign-up</h1>
+            <p>Already have an account?<a th:href="@{/sign-in}"> Sign-in!</a></p>
+            <!-- Text -->
+            <section>
+                <h2>Fill out the following information to create an account.</h2>
+
+                <form action="#" method="post" th:action="@{/sign-up}" th:object="${newCustomer}">
+                    <div class="row gtr-uniform">
+                        <div class="col-6 col-12-small">
+                            <label for="first-name"></label><input id="first-name" name="first-name"
+                                                                   placeholder="First name" th:field="*{firstName}"
+                                                                   type="text" value=""/>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <input id="last-name" name="last-name" placeholder="Last name" th:field="*{lastName}"
+                                   type="text" value=""/>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <label for="password"></label><input id="password" name="password" placeholder="Password"
+                                                                 th:field="*{password}" type="password" value=""/>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <label for="confirm-password"></label><input id="confirm-password" name="confirm-password"
+                                                                         placeholder="Confirm password" type="password"
+                                                                         value=""/>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <label for="email"></label><input id="email" name="email" placeholder="Email"
+                                                              th:field="*{email}" type="email"/>
+
+                            <label for="phone-number"></label><input id="phone-number" name="phone-number"
+                                                                     placeholder="Phone number"
+                                                                     th:field="*{phoneNumber}" type="text"
+                                                                     value=""/>
+                        </div>
+
+                        <h3>Address</h3>
+
+                        <br>
+
+
+                        <div class="col-6 col-12-small">
+                            <label for="address"></label><input id="address" name="address" placeholder="Street"
+                                                                th:field="*{address}" type="text" value=""/>
+                        </div>
+
+                        <div class="col-6 col-12-small">
+                            <label for="postal-code"></label><input id="postal-code" name="postal-code"
+                                                                    placeholder="Postal code" th:field="*{postalCode}"
+                                                                    type="text" value=""/>
+                        </div>
+
+                        <div class="col-6 col-12-small">
+                            <label for="city"></label><input id="city" name="city" placeholder="City" th:field="*{city}"
+                                                             type="text" value=""/>
+                        </div>
+
+
+                        <div class="col-6 col-12-small">
+                            <label for="country"></label><input id="country" name="country" placeholder="Country"
+                                                                th:field="*{country}" type="text" value=""/>
+                        </div>
+
+
+                        <div class="col-6 col-12-small">
+                            <input checked id="demo-human" name="demo-human" type="checkbox">
+                            <label for="demo-human">Not a robot</label>
+                        </div>
+
+                        <div class="col-12">
+                            <ul class="actions">
+                                <li><input class="primary" type="submit" value="Sign-up"/></li>
+                                <li><input type="reset" value="Reset"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<div th:replace="footer :: footer"></div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

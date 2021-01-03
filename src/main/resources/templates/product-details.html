@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring E-Commerce</title>
+    <meta charset="utf-8"/>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/a0c6b9bb23.js"></script>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" th:href="@{../../assets/css/main.css}"/>
+    <noscript>
+        <link rel="stylesheet" th:href="@{../../assets/css/noscript.css}"/>
+    </noscript>
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<div th:replace="header :: header"></div>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <section class="wrapper" id="main">
+        <div class="inner">
+            <h1 class="major" th:text="${product.productName}">Title</h1>
+
+            <!-- Text -->
+            <section>
+                <h2>Subtitle</h2>
+            </section>
+
+
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<div th:replace="footer :: footer"></div>
+
+<!-- Scripts -->
+<script th:src="@{../../assets/js/jquery.min.js}" type="text/javascript"></script>
+<script th:src="@{../../assets/js/jquery.scrollex.min.js}" type="text/javascript"></script>
+<script th:src="@{../../assets/js/jquery.scrolly.min.js}" type="text/javascript"></script>
+<script th:src="@{../../assets/js/browser.min.js}" type="text/javascript"></script>
+<script th:src="@{../../assets/js/breakpoints.min.js}" type="text/javascript"></script>
+<script th:src="@{../../assets/js/util.js}" type="text/javascript"></script>
+<script th:src="@{../../assets/js/main.js}" type="text/javascript"></script>
+
+</body>
+</html>

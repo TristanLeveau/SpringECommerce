@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<head th:fragment="head">
+    <title>Spring E-Commerce</title>
+    <meta charset="utf-8"/>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/a0c6b9bb23.js"></script>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <noscript>
+        <link href="assets/css/noscript.css" rel="stylesheet"/>
+    </noscript>
+</head>
+
+<header id="header" th:fragment="header">
+    <a class="title" th:href="@{home}">Spring E-Commerce</a>
+    <nav>
+        <ul>
+            <li><a th:href="@{home}">Home</a></li>
+            <li><a th:href="@{products}">Products</a></li>
+            <li><a class="active" th:href="@{cart}">My cart</a></li>
+            <li><a th:href="@{sign-in}" th:if="${session.connectedUser == null}">Sign-in</a><a th:href="@{profile}"
+                                                                                               th:if="${session.connectedUser != null}">Connected
+                as <span th:text="${session.connectedUser.firstName + ' ' + session.connectedUser.lastName}"><span
+                        class="active" th:if="${session.connectedUser.isAdmin == true}"> - Admin</span></span></a></li>
+            <li class="fa fa-bars"></li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>

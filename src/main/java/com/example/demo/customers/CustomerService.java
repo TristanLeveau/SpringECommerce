@@ -22,19 +22,23 @@ public class CustomerService {
 
     }
 
-    public void addCustomer(Customer customer){
+    public void addCustomer(Customer customer) {
         customerRepository.save(customer);
     }
 
-    public void updateCustomer(Integer id, Customer customer){
+    public void updateCustomer(Integer id, Customer customer) {
         customerRepository.save(customer);
     }
 
-    public Optional<Customer> getCustomerById(Integer customerId){
+    public Optional<Customer> getCustomerById(Integer customerId) {
         return customerRepository.findById(customerId);
     }
 
-    public void deleteCustomer(Integer customerId){
+    public Optional<Customer> getCustomerByEmail(String email, String password) {
+        return customerRepository.getCustomerByEmailAndPassword(email, password);
+    }
+
+    public void deleteCustomer(Integer customerId) {
         customerRepository.deleteById(customerId);
     }
 
